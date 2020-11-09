@@ -6,11 +6,8 @@ import 'package:ferry/ferry.dart';
 import 'package:ferry_exec/ferry_exec.dart';
 import 'package:uuid/uuid.dart';
 
-typedef RequestCallback = void Function(OperationRequest);
-typedef ResponseCallback = void Function(OperationResponse);
-
-class RequestIdLink extends TypedLink {
-  const RequestIdLink();
+class AddRequestIdTypedLink extends TypedLink {
+  const AddRequestIdTypedLink();
 
   @override
   Stream<OperationResponse<TData, TVars>> request<TData, TVars>(

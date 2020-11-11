@@ -14,7 +14,7 @@ class AddRequestIdTypedLink extends TypedLink {
     OperationRequest<TData, TVars> request, [
     forward,
   ]) {
-    final id = request.requestId ?? Uuid().v4();
+    final id = request.requestId ?? Uuid().v1();
     return forward(_requestWithId(request, id));
   }
 

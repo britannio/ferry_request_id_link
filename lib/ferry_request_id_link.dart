@@ -15,7 +15,9 @@ class AddRequestIdTypedLink extends TypedLink {
     forward,
   ]) {
     final id = request.requestId ?? Uuid().v1();
-    return forward(_requestWithId(request, id));
+    return forward != null
+        ? forward(_requestWithId(request, id))
+        : Stream.empty();
   }
 
   OperationRequest<TData, TVars> _requestWithId<TData, TVars>(
